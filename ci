@@ -8,14 +8,8 @@ set -e # Exit on any error
 cd .   # Kick off the rvmrc
 set -x # Echo each command
 
-echo '========== Verify Environment ======================================='
-ruby -v
-gem env gemdir
-env | sort
-
 echo '========== Install Gems ============================================='
 bundle --no-color install
 
-echo '========== Run Specs ================================================'
-# Set rspec output options
+echo '========== Verify Backlog ==========================================='
 bundle exec validate
